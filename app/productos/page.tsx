@@ -1,7 +1,8 @@
 "use client"
 
 import type React from "react"
-
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 import { useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Package } from "lucide-react"
@@ -73,6 +74,7 @@ export default function ProductosPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+        <Header />
       <div className="container py-12 md:py-20">
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
@@ -114,6 +116,8 @@ export default function ProductosPage() {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   )
 }
