@@ -37,37 +37,42 @@ export default function ProductosPage() {
   const productos = [
     {
       id: 1,
-      titulo: "Materiales de Reparación y Mantenimiento",
+      titulo: "Asesoramiento Técnico Online en Reparaciones y Mantenimiento",
       descripcion:
-        "Productos esenciales para pequeñas reparaciones y trabajos de mantenimiento en el hogar o la empresa. Incluyen cemento rápido, selladores, masillas, pinturas, silicona, yeso y adhesivos de alta resistencia. Ideal para reparaciones rápidas, sellado de grietas, fijaciones o terminaciones.",
-      valorAgregado: "Se pueden ofrecer junto con el servicio de mantenimiento o restauración.",
-      buyButtonId: "buy_btn_1SFEVeI2ITUAo0A1lh6TEhPR",
+        "Servicio de asistencia virtual donde un técnico especializado guía al cliente paso a paso en la resolución de problemas de mantenimiento, reparación eléctrica o de fontanería. Ideal para quienes desean resolver incidencias menores sin necesidad de una visita presencial.",
+      valorAgregado:
+        "Incluye diagnóstico en tiempo real por videollamada y envío de recomendaciones personalizadas según el tipo de instalación.",
+      buyButtonId: "buy_btn_1SFE76I2ITUAo0A1bbYpoyFH",
     },
     {
       id: 2,
-      titulo: "Iluminación y Accesorios Eléctricos",
+      titulo: "Consultoría Energética y de Iluminación Eficiente",
       descripcion:
-        "Amplia gama de productos eléctricos como bombillas LED, plafones, sensores de movimiento, tomas de corriente, llaves térmicas, disyuntores y enchufes inteligentes. Ideal para mejorar la eficiencia energética y modernizar instalaciones eléctricas.",
-      valorAgregado: "Instalación y revisión del sistema eléctrico incluidos como servicio opcional.",
+        "Análisis remoto del consumo eléctrico e iluminación del hogar o empresa, con recomendaciones personalizadas para reducir el gasto energético y mejorar la eficiencia. Se evalúan dispositivos, distribución lumínica y hábitos de uso.",
+      valorAgregado:
+        "Se entrega un informe detallado con estimaciones de ahorro y un plan de mejora adaptado al cliente.",
       buyButtonId: "buy_btn_1SFEWaI2ITUAo0A1YEYhb3Qw",
     },
     {
       id: 3,
-      titulo: "Griferías y Accesorios Sanitarios",
+      titulo: "Asesoramiento Online en Remodelación de Cocinas y Baños",
       descripcion:
-        "Griferías modernas, duchas, flexibles, válvulas, sifones y accesorios para baño o cocina. Diseñados para ofrecer durabilidad, eficiencia y estilo. Perfectos para renovar espacios con productos de calidad profesional.",
-      valorAgregado: "Instalación profesional disponible con garantía de trabajo.",
+        "Servicio digital donde un experto en diseño y mantenimiento sanitario asesora sobre la mejor selección de griferías, materiales y distribución del espacio. Se incluyen recomendaciones técnicas y estéticas para optimizar la renovación.",
+      valorAgregado:
+        "Incluye videollamada de consulta y envío de propuesta visual o lista de materiales sugeridos según presupuesto.",
       buyButtonId: "buy_btn_1SFEXPI2ITUAo0A1dLMXlM3z",
     },
     {
       id: 4,
-      titulo: "Kit de Mantenimiento Preventivo",
+      titulo: "Plan Personalizado de Mantenimiento Preventivo Online",
       descripcion:
-        "Conjunto de herramientas y materiales básicos para el mantenimiento preventivo de cualquier instalación. Incluye cinta teflón, cinta aisladora, tornillos, fusibles, bombillas, guantes, lubricantes y destornilladores. Todo lo necesario para el cuidado regular de tu hogar o negocio.",
-      valorAgregado: "Kit completo listo para usar, ideal para tener siempre a mano.",
-      buyButtonId: "buy_btn_1SFE76I2ITUAo0A1bbYpoyFH",
+        "Evaluación virtual de las instalaciones del cliente (eléctricas, sanitarias, estructurales o de climatización) y creación de un plan preventivo anual con alertas y recordatorios. Ideal para empresas o propietarios que quieren evitar averías costosas.",
+      valorAgregado:
+        "Incluye calendario de mantenimiento personalizado y seguimiento mensual vía correo o chat técnico.",
+      buyButtonId: "buy_btn_1SFEVeI2ITUAo0A1lh6TEhPR",
     },
-  ]
+  ];
+  
 
   const publishableKey =
     "pk_test_51SEZ0CI2ITUAo0A1usw15Cqp2YYZda9lGbU8wDDl2n7XFtMCz2xWLiyyc3R1VGhrcdUPrd181M9894jmaOANdpBH00hH26ef6e"
