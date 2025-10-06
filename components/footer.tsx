@@ -34,12 +34,12 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <span>info@servicios.com</span>
+                <span> jose.salazar@nextmove25.com | roberto.sanroman@nextmove25.com </span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5" />
                 <span>
-                  Calle Principal 123
+                  128 City Road, London, United Kingdom, EC1V 2NX
                   <br />
                   Madrid, España
                 </span>
@@ -72,7 +72,7 @@ export function Footer() {
         <div className="border-t border-primary-foreground/20 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-primary-foreground/60 text-center md:text-left">
-              &copy; {new Date().getFullYear()} Servicios Profesionales. Todos los derechos reservados.
+              &copy; {new Date().getFullYear()} NEXTMOVE25 LTD Todos los derechos reservados.
             </p>
             <div className="flex gap-6 text-xs text-primary-foreground/60">
               <Link
