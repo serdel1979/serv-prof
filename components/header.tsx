@@ -15,20 +15,23 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center hover:opacity-80 transition-opacity text-primary">
+      <Link href="/" className="flex items-center hover:opacity-80 transition-opacity text-primary">
 
-          <img
-            src="/logo.png"   // también en /public/logo.png
-            alt="Logo Servicios Profesionales"
-            width={48}
-            height={40}
-            className="flex-shrink-0"
-          />
-        </Link>
+        <img
+          src="/logo.png"   // también en /public/logo.png
+          alt="Logo Servicios Profesionales"
+          width={48}
+          height={40}
+          className="flex-shrink-0"
+        />
+      </Link>
 
         <nav className="hidden md:flex items-center gap-6">
           <Link href="/servicios" className="text-sm font-medium hover:text-primary transition-colors">
             Servicios
+          </Link>
+          <Link href="/productos" className="text-sm font-medium hover:text-primary transition-colors">
+            Productos
           </Link>
           <Link href="/sobre-nosotros" className="text-sm font-medium hover:text-primary transition-colors">
             Sobre Nosotros
@@ -67,6 +70,13 @@ export function Header() {
               onClick={handleLinkClick}
             >
               Servicios
+            </Link>
+            <Link
+              href="/productos"
+              className="text-sm font-medium hover:text-primary transition-colors py-2"
+              onClick={handleLinkClick}
+            >
+              Productos
             </Link>
             <Link
               href="/sobre-nosotros"
