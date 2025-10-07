@@ -31,18 +31,7 @@ export default function ContactoPage() {
                 <h2 className="text-3xl font-bold mb-8">Información de Contacto</h2>
 
                 <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Phone className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">Teléfono</h3>
-                      <p className="text-muted-foreground mb-2">Llámanos directamente</p>
-                      <Button asChild variant="link" className="h-auto p-0 text-base">
-                        <Link href="tel:+34900123456">+34 900 123 456</Link>
-                      </Button>
-                    </div>
-                  </div>
+
 
                   <div className="flex items-start gap-4">
                     <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -52,7 +41,7 @@ export default function ContactoPage() {
                       <h3 className="font-semibold mb-1">Email</h3>
                       <p className="text-muted-foreground mb-2">Escríbenos un correo</p>
                       <Button asChild variant="link" className="h-auto p-0 text-base">
-                        <Link href="mailto:info@servicios.com">info@servicios.com</Link>
+                        <Link href="mailto:info@nextmove25.com">info@nextmove25.com</Link>
                       </Button>
                     </div>
                   </div>
@@ -65,9 +54,7 @@ export default function ContactoPage() {
                       <h3 className="font-semibold mb-1">Dirección</h3>
                       <p className="text-muted-foreground mb-2">Visítanos en nuestra oficina</p>
                       <p className="text-base">
-                        Calle Principal 123
-                        <br />
-                        28001 Madrid, España
+                        128 City Road, London, United Kingdom, EC1V 2NX
                       </p>
                     </div>
                   </div>

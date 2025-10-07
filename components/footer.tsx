@@ -28,20 +28,15 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Contacto</h4>
             <ul className="space-y-3 text-sm text-primary-foreground/80">
-              <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4" />
-                <span>+34 900 123 456</span>
-              </li>
+
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <span> jose.salazar@nextmove25.com | roberto.sanroman@nextmove25.com </span>
+                <span> info@nextmove25.com </span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5" />
                 <span>
                   128 City Road, London, United Kingdom, EC1V 2NX
-                  <br />
-                  Madrid, España
                 </span>
               </li>
             </ul>

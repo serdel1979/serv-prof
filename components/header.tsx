@@ -42,12 +42,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button asChild className="gap-2">
-            <Link href="tel:+34900123456">
-              <Phone className="h-4 w-4" />
-              <span className="hidden sm:inline">Llamar Ahora</span>
-            </Link>
-          </Button>
+
 
           <Button
             variant="ghost"
