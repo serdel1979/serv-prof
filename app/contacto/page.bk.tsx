@@ -1,6 +1,3 @@
-"use client"
-
-import { useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -8,49 +5,6 @@ import { Phone, Mail, MapPin, Clock, Send } from "lucide-react"
 import Link from "next/link"
 
 export default function ContactoPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
-  })
-
-  const [status, setStatus] = useState("")
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value })
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setStatus("Enviando...")
-
-    try {
-      const response = await fetch("https://nextmove25.com/api/send_mail.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString(),
-      })
-
-      const result = await response.json()
-      if (result.success) {
-        setStatus("✅ Tu mensaje fue enviado correctamente.")
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          service: "",
-          message: "",
-        })
-      } else {
-        setStatus("❌ Error: " + (result.error || "No se pudo enviar el mensaje."))
-      }
-    } catch (error) {
-      setStatus("❌ Error de conexión con el servidor.")
-    }
-  }
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -61,7 +15,7 @@ export default function ContactoPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Contacto</h1>
             <p className="text-xl text-primary-foreground/90 leading-relaxed">
-              Estamos aquí para ayudarte. Contáctanos y recibe un presupuesto sin compromiso.
+              Estamos aquí para ayudarte. Contáctanos y recibe un presupuesto sin compromiso
             </p>
           </div>
         </div>
@@ -77,6 +31,8 @@ export default function ContactoPage() {
                 <h2 className="text-3xl font-bold mb-8">Información de Contacto</h2>
 
                 <div className="space-y-6">
+
+
                   <div className="flex items-start gap-4">
                     <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <Mail className="h-6 w-6 text-primary" />
@@ -121,7 +77,7 @@ export default function ContactoPage() {
               <div>
                 <h2 className="text-3xl font-bold mb-8">Solicita un Presupuesto</h2>
 
-                <form className="space-y-6" onSubmit={handleSubmit}>
+                <form className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
                       Nombre completo
@@ -129,11 +85,8 @@ export default function ContactoPage() {
                     <input
                       type="text"
                       id="name"
-                      value={formData.name}
-                      onChange={handleChange}
                       className="w-full px-4 py-2 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       placeholder="Tu nombre"
-                      required
                     />
                   </div>
 
@@ -144,11 +97,8 @@ export default function ContactoPage() {
                     <input
                       type="email"
                       id="email"
-                      value={formData.email}
-                      onChange={handleChange}
                       className="w-full px-4 py-2 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       placeholder="tu@email.com"
-                      required
                     />
                   </div>
 
@@ -159,8 +109,6 @@ export default function ContactoPage() {
                     <input
                       type="tel"
                       id="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
                       className="w-full px-4 py-2 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       placeholder="+34 600 000 000"
                     />
@@ -172,8 +120,6 @@ export default function ContactoPage() {
                     </label>
                     <select
                       id="service"
-                      value={formData.service}
-                      onChange={handleChange}
                       className="w-full px-4 py-2 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                     >
                       <option value="">Selecciona un servicio</option>
@@ -195,11 +141,8 @@ export default function ContactoPage() {
                     <textarea
                       id="message"
                       rows={4}
-                      value={formData.message}
-                      onChange={handleChange}
                       className="w-full px-4 py-2 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                       placeholder="Cuéntanos qué necesitas..."
-                      required
                     />
                   </div>
 
@@ -207,10 +150,6 @@ export default function ContactoPage() {
                     <Send className="h-5 w-5" />
                     Enviar Solicitud
                   </Button>
-
-                  {status && (
-                    <p className="text-sm text-center mt-3 text-muted-foreground">{status}</p>
-                  )}
                 </form>
               </div>
             </div>
