@@ -1,18 +1,27 @@
 <?php
+// Mostrar errores para depuración
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+ini_set('error_log', __DIR__ . '/error_log.txt');
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'phpmailer/src/Exception.php';
-require 'phpmailer/src/PHPMailer.php';
-require 'phpmailer/src/SMTP.php';
+// Cargar Composer autoload
+require __DIR__ . '/vendor/autoload.php';
 
+// Solo procesar POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $name = htmlspecialchars($_POST['name'] ?? '');
-    $email = htmlspecialchars($_POST['email'] ?? '');
-    $phone = htmlspecialchars($_POST['phone'] ?? '');
+
+    // Obtener datos del formulario
+    $name    = htmlspecialchars($_POST['name'] ?? '');
+    $email   = htmlspecialchars($_POST['email'] ?? '');
+    $phone   = htmlspecialchars($_POST['phone'] ?? '');
     $service = htmlspecialchars($_POST['service'] ?? '');
     $message = htmlspecialchars($_POST['message'] ?? '');
 
+    // Validación básica
     if (empty($name) || empty($email) || empty($message)) {
         echo json_encode(["success" => false, "error" => "Faltan campos obligatorios"]);
         exit;
@@ -21,14 +30,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $mail = new PHPMailer(true);
 
     try {
-        // Configuración del servidor SMTP
+        // Configuración SMTP
         $mail->isSMTP();
         $mail->Host       = 'mail.nextmove25.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = 'info@nextmove25.com';
         $mail->Password   = '#(&M)SKGL3QgMJ{o';
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // SSL/TLS
-        $mail->Port       = 465;
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // STARTTLS
+        $mail->Port       = 587;
+
+        // Ignorar verificación de certificado (por problemas de SSL autofirmado)
+        $mail->SMTPOptions = [
+            'ssl' => [
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true,
+            ],
+        ];
 
         // Remitente y destinatario
         $mail->setFrom('info@nextmove25.com', 'NextMove Contacto');
@@ -46,10 +64,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <p><strong>Mensaje:</strong><br>{$message}</p>
         ";
 
+        // Enviar
         $mail->send();
         echo json_encode(["success" => true, "message" => "Correo enviado correctamente"]);
+
     } catch (Exception $e) {
         echo json_encode(["success" => false, "error" => "Error al enviar: {$mail->ErrorInfo}"]);
     }
+
+} else {
+    echo json_encode(["success" => false, "error" => "Método no permitido"]);
 }
-?>
